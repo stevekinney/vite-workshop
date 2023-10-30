@@ -4,5 +4,8 @@
 </script>
 
 <nav class="flex flex-col gap-8">
-	<Section title="Getting Started" />
+	<Section title="Getting Started"></Section>
+	<Section title="Building Libraries">
+		<Link href="/library-mode">Library Mode</Link>
+	</Section>
 </nav>
