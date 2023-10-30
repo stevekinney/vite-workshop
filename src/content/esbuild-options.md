@@ -54,7 +54,3 @@ export default {
 3. **Documentation**: Always consult the [esbuild documentation](https://esbuild.github.io/api/) for the most accurate and detailed information about these options.
 
 Understanding the `esbuild` options within `optimizeDeps` can offer greater flexibility and control over the build and optimization process. This is particularly useful for developers who have specific optimization requirements that are not handled out-of-the-box by Vite.
-
-Given your interest in diving deep into technical topics and your aim to teach coding, understanding the `esbuild` options in Vite's `optimizeDeps` could add a valuable layer of depth to your knowledge base.
-
-Would you like to know more details about any specific esbuild options?

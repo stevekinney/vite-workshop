@@ -87,8 +87,7 @@ By studying this comprehensive outline, you can gain a clear understanding of ho
 
 CSS handling in Vite is quite flexible and caters to a wide range of CSS-related needs. Here's an overview of how Vite handles CSS, including support for CSS Modules, PostCSS, and preprocessors like SCSS:
 
-1. **CSS Modules:**
-   - Vite offers native support for CSS Modules, which is a way to locally scope CSS class names to avoid global style conflicts.
+1. **CSS Modules**: Vite offers native support for CSS Modules, which is a way to locally scope CSS class names to avoid global style conflicts.
    - When you create a CSS file with the `.module.css` extension, Vite automatically treats it as a CSS Module.
    - You can import and use CSS Modules in your JavaScript or Vue components, and the class names are scoped to the component.
 
@@ -107,8 +106,7 @@ export default {
 </script>
 ```
 
-2. **PostCSS:**
-   - Vite supports PostCSS, a CSS preprocessor and post-processor, out of the box.
+2. **PostCSS**: Vite supports PostCSS, a CSS preprocessor and post-processor, out of the box.
    - You can configure PostCSS and add plugins to your project by modifying the `postcss.config.js` file in your project directory.
    - This allows you to apply transformations to your CSS, such as autoprefixing, nesting, and custom property handling.
 
@@ -122,8 +120,7 @@ module.exports = {
 };
 ```
 
-3. **SCSS and Other Preprocessors:**
-   - Vite also supports popular CSS preprocessors like SCSS, Less, and Stylus.
+3. **SCSS and Other Preprocessors**: Vite also supports popular CSS preprocessors like SCSS, Less, and Stylus.
    - To use SCSS, for example, you can simply install the `sass` package and start writing `.scss` files in your project.
    - There's no need for additional configuration; Vite will process these files automatically.
 

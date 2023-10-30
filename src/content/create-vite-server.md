@@ -65,7 +65,3 @@ And several more, allowing you to control and interact with the server programma
 - **Testing**: You can write tests that spin up a Vite server, run some operations, and then shut it down.
 - **Custom Development Environments**: Integrate Vite into larger, custom development setups.
 - **Programmatic Builds**: Run build operations on-demand, based on certain events or triggers.
-
-Given your background in software engineering and interest in teaching coding, understanding the `createViteServer` function could enable you to build more complex and tailored development setups, both for your projects and as teaching material.
-
-Would you like to know more about how to use this function or about any specific scenarios where it might be particularly useful?

@@ -60,5 +60,3 @@ The `assetsInclude` option is especially useful in projects that have custom ass
 - PDFs or other document types that should be treated as static assets.
 
 Understanding how `assetsInclude` works can provide you with greater control over how Vite handles various file types in your project. This can be particularly valuable when you are building projects that have unique requirements for asset handling.
-
-Would you like to know more about this or any other Vite-specific features?

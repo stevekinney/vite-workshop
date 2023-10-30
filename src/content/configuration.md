@@ -172,12 +172,6 @@ async function startServer() {
 }
 ```
 
-Given your passion for teaching code and your work as a software engineer, understanding the depth of Vite's configurability could provide you with valuable material for tutorials, workshops, or in-depth guides. With this knowledge, you could teach students or audiences how to create highly customized build setups tailored to specific project needs.
-
-Would you like to dive deeper into any of these aspects of Vite configuration?
-
-Certainly, Vite offers a rich set of configuration options beyond `optimizeDeps` to tailor the build and development experience to your specific needs. Here are some important ones you might find interesting:
-
 ### `base`
 
 Defines the base public path when served in development or production. Useful for deploying to subdirectories.

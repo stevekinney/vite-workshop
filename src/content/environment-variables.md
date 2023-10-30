@@ -79,7 +79,3 @@ interface ImportMetaEnv {
 
 1. **Security**: Remember that all client-accessible environment variables will be exposed in the browser, so don't store sensitive information there.
 2. **Server-side Variables**: Server-side environment variables are accessible in the `vite.config.js` but should not be prefixed with `VITE_` if you want to keep them server-side.
-
-Given your interest in technology and teaching, understanding environment variables could add a layer of depth to your curriculum, allowing you to teach students about best practices for configuration management, security considerations, and environment-specific adjustments.
-
-Would you like to know more about any particular aspect of environment variables in Vite?
