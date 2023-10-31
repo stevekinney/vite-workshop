@@ -18,6 +18,7 @@ type ContentFile =
 	| 'import-meta'
 	| 'introduction'
 	| 'json-named-exports'
+	| 'library-mode-components'
 	| 'library-mode'
 	| 'link-and-force-optimization'
 	| 'middleware'
@@ -31,5 +32,6 @@ type ContentFile =
 	| 'ssr'
 	| 'static-assets'
 	| 'templates'
+	| 'typed-css-modules'
 	| 'typescript'
 	| 'why-vite';

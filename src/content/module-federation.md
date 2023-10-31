@@ -17,7 +17,7 @@ Vite offers fast development, lean builds, and has a simple config API. It also 
 You'll need to add a Vite plugin to enable Module Federation. One such plugin is `vite-plugin-module-federation`. Install it as a dependency:
 
 ```bash
-npm install vite-plugin-module-federation --save-dev
+npm install @originjs/vite-plugin-federation --save-dev
 ```
 
 Now, add it to your Vite config. Create or modify `vite.config.js` as follows:
@@ -29,7 +29,7 @@ import ModuleFederation from 'vite-plugin-module-federation';
 export default defineConfig({
 	plugins: [
 		ModuleFederation({
-			name: 'fancy-design-system',
+			name: 'very-fancy-components',
 			filename: 'remoteEntry.js',
 			exposes: {
 				'./button': './src/components/button.tsx'
@@ -47,14 +47,19 @@ Next, update its `vite.config.js` to consume the federated module:
 
 ```javascript
 import { defineConfig } from 'vite';
-import ModuleFederation from 'vite-plugin-module-federation';
+import react from '@vitejs/plugin-react-swc';
+import federation from '@originjs/vite-plugin-federation';
 
+// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
-		ModuleFederation({
+		react(),
+		federation({
+			name: 'host-app',
 			remotes: {
-				['fancy-design-system']: 'fancy-design-system@http://localhost:3000/remoteEntry.js'
-			}
+				farfaraway: 'http://localhost:4173/assets/remoteEntry.js'
+			},
+			shared: ['react', 'react-dom']
 		})
 	]
 });
@@ -64,8 +69,19 @@ export default defineConfig({
 
 In your application code, you can now dynamically import the federated module:
 
-```javascript
-const Button = import('fancy-design-system/button');
+```tsx
+const Button = lazy<ComponentType<ButtonProps>>(() => import('farfaraway/button'));
+
+const Application = () => {
+	return (
+		<React.Suspense fallback="Loading App...">
+			<h1>Look at this button!</h1>
+			<Button dangerous>Button</Button>
+		</React.Suspense>
+	);
+};
+
+export default Application;
 ```
 
 ### Running the Projects
