@@ -8,6 +8,12 @@ These are my notes from the [Vite workshop](https://frontendmasters.com/workshop
 
 If you see a typographical error, you can open up a pull request againt [this repository](https://github.com/stevekinney/vite-workshop).
 
+## Required Software
+
+Outside of the basics (e.g. Node, etc.), the we'll be using the following tools:
+
+- [pnpm](https://pnpm.io)
+
 ## Repositories
 
 We're going to use the following repositories during our journey together.
