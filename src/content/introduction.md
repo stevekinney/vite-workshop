@@ -6,7 +6,7 @@ title: Introduction
 
 These are my notes from the [Vite workshop](https://frontendmasters.com/workshops/vite) for [Frontend Masters](https://frontendmasters.com).
 
-If you see a typographical error, you can open up a pull request againt [this repository](- [vite-starter](https://github.com/stevekinney/vite-workshop))
+If you see a typographical error, you can open up a pull request againt [this repository](https://github.com/stevekinney/vite-workshop).
 
 ## Repositories
 
