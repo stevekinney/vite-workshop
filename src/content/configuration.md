@@ -10,7 +10,7 @@ Configuring Vite involves tweaking settings in a `vite.config.js` file at the ro
 
 Here's a basic `vite.config.js` to start:
 
-```javascript
+```js
 // vite.config.js
 import VitePlugin from 'some-vite-plugin';
 
@@ -31,7 +31,7 @@ export default {
 
 An array of Vite plugins to be used. Plugins can affect how Vite bundles your code, handles assets, or even injects new features.
 
-```javascript
+```js
 import ViteReact from '@vitejs/plugin-react';
 import ViteVue from '@vitejs/plugin-vue';
 
@@ -44,7 +44,7 @@ export default {
 
 Specifies the root directory for a project. It defaults to the location of the `vite.config.js` file.
 
-```javascript
+```js
 export default {
 	root: './src'
 };
@@ -54,7 +54,7 @@ export default {
 
 Customize how Vite resolves modules. For example, to add custom aliasing:
 
-```javascript
+```js
 export default {
 	resolve: {
 		alias: {
@@ -68,7 +68,7 @@ export default {
 
 Specifies the directory for static assets. The default is the `public` directory.
 
-```javascript
+```js
 export default {
 	publicDir: 'static-assets'
 };
@@ -78,7 +78,7 @@ export default {
 
 Configuration related to the development server.
 
-```javascript
+```js
 export default {
 	server: {
 		port: 8080,
@@ -94,7 +94,7 @@ export default {
 
 Controls how your project is built for production.
 
-```javascript
+```js
 export default {
 	build: {
 		outDir: 'dist',
@@ -110,7 +110,7 @@ export default {
 
 Used for handling dependencies that need special treatment for optimization. For instance, to pre-bundle certain dependencies:
 
-```javascript
+```js
 export default {
 	optimizeDeps: {
 		include: ['lodash']
@@ -122,7 +122,7 @@ export default {
 
 Used to replace variables in code during bundling. For example, to replace `process.env.NODE_ENV`:
 
-```javascript
+```js
 export default {
 	define: {
 		'process.env.NODE_ENV': '"production"'
@@ -134,7 +134,7 @@ export default {
 
 CSS-related options, such as PostCSS plugins, can be configured here.
 
-```javascript
+```js
 export default {
 	css: {
 		postcss: {
@@ -160,7 +160,7 @@ Vite has first-class TypeScript support, and you can even write your `vite.confi
 
 Vite also exposes a JavaScript API for more advanced configurations. This allows you to, for example, programmatically start the Vite development server with custom settings.
 
-```javascript
+```js
 // script.js
 import { createServer } from 'vite';
 
@@ -176,7 +176,7 @@ async function startServer() {
 
 Defines the base public path when served in development or production. Useful for deploying to subdirectories.
 
-```javascript
+```js
 export default {
 	base: '/subdirectory/'
 };
@@ -186,7 +186,7 @@ export default {
 
 Specifies the folder to serve as the root for the dev server and to be copied to the root of the `dist` directory during the build.
 
-```javascript
+```js
 export default {
 	publicDir: 'public'
 };
@@ -196,7 +196,7 @@ export default {
 
 Contains options for the build process, such as `rollupOptions`, `target`, `outDir`, and more. For example, you can control how CSS code-splitting works:
 
-```javascript
+```js
 export default {
 	build: {
 		cssCodeSplit: true
@@ -208,7 +208,7 @@ export default {
 
 Configuration options for the development server, such as `host`, `port`, `strictPort`, and `proxy`.
 
-```javascript
+```js
 export default {
 	server: {
 		port: 3000,
@@ -223,7 +223,7 @@ export default {
 
 Controls how module requests are resolved. You can define custom aliasing, extensions, and other options here.
 
-```javascript
+```js
 export default {
 	resolve: {
 		alias: {
@@ -237,7 +237,7 @@ export default {
 
 Allows you to add an array of plugins to extend Vite's functionality. Vite plugins are based on Rollup plugins but with additional hooks and properties that are Vite-specific.
 
-```javascript
+```js
 import Vue from '@vitejs/plugin-vue';
 
 export default {
@@ -249,7 +249,7 @@ export default {
 
 CSS-related options, such as modules and preprocessor options.
 
-```javascript
+```js
 export default {
 	css: {
 		preprocessorOptions: {
@@ -265,7 +265,7 @@ export default {
 
 Controls JSX transformation, allowing you to specify the JSX factory, JSX fragment, or even disable JSX transformation.
 
-```javascript
+```js
 export default {
 	jsx: {
 		factory: 'h',
@@ -278,7 +278,7 @@ export default {
 
 Controls Server-Side Rendering (SSR) options, letting you specify an external file as the entry point for your server code and other settings.
 
-```javascript
+```js
 export default {
 	ssr: {
 		external: ['some-external-package'],

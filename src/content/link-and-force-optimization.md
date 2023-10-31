@@ -16,7 +16,7 @@ Force optimization means explicitly telling Vite to include certain packages in 
 
 Here's how you can use `include` to force optimization:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	optimizeDeps: {

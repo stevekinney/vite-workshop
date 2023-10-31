@@ -26,7 +26,7 @@ console.log(data.name); // Output: Alice
 
 Vite also allows named exports directly from JSON files. This feature enables you to import only the fields you need:
 
-```javascript
+```js
 import { name, age } from './data.json';
 
 console.log(name); // Output: Alice

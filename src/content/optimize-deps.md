@@ -14,7 +14,7 @@ You can specify options under `optimizeDeps` in your `vite.config.js` file. Some
 
 - `include`: An array of package names or globs to forcibly include in the optimization step, even if they are not imported in your code.
 
-  ```javascript
+  ```js
   optimizeDeps: {
   	include: ['lodash'];
   }
@@ -22,7 +22,7 @@ You can specify options under `optimizeDeps` in your `vite.config.js` file. Some
 
 - `exclude`: An array of package names to exclude from the optimization process.
 
-  ```javascript
+  ```js
   optimizeDeps: {
   	exclude: ['optional-package'];
   }
@@ -30,7 +30,7 @@ You can specify options under `optimizeDeps` in your `vite.config.js` file. Some
 
 - `esbuild`: Allows you to pass options directly to esbuild for dependency optimization.
 
-  ```javascript
+  ```js
   optimizeDeps: {
   	esbuild: {
   		// esbuild options

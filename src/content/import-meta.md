@@ -12,7 +12,7 @@ In Vite, `import.meta` serves multiple purposes and allows you to write more dyn
 
 You can access environment variables in your Vite project through `import.meta.env`. Variables prefixed with `VITE_` in your `.env` files are exposed to your code via `import.meta.env`.
 
-```javascript
+```js
 console.log(import.meta.env.VITE_API_URL); // Outputs: "https://myapi.com"
 ```
 
@@ -20,7 +20,7 @@ console.log(import.meta.env.VITE_API_URL); // Outputs: "https://myapi.com"
 
 Vite uses `import.meta.hot` for Hot Module Replacement, allowing you to replace modules without reloading the entire page. This is essential for a fast development experience.
 
-```javascript
+```js
 if (import.meta.hot) {
 	import.meta.hot.accept(['./module.js'], (modules) => {
 		// Handle the updated modules here
@@ -32,7 +32,7 @@ if (import.meta.hot) {
 
 `import.meta.url` provides the URL of the current module, which can be useful for dynamic imports or working with assets.
 
-```javascript
+```js
 const moduleUrl = new URL('some-asset.png', import.meta.url);
 ```
 
@@ -40,7 +40,7 @@ const moduleUrl = new URL('some-asset.png', import.meta.url);
 
 Vite extends `import.meta` to add a globbing feature, which allows you to import multiple modules with a single statement.
 
-```javascript
+```js
 import.meta.glob('./dir/*.js'); // Returns an object mapping paths to import() functions
 ```
 
@@ -48,7 +48,7 @@ import.meta.glob('./dir/*.js'); // Returns an object mapping paths to import() f
 
 Some Vite plugins extend `import.meta` with custom properties. For example, a plugin might inject a version number:
 
-```javascript
+```js
 console.log(import.meta.VERSION); // Outputs: "1.0.0", if the plugin sets this property
 ```
 

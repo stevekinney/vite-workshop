@@ -7,7 +7,7 @@ Vite has two types of middleware modes:
 
 Here's how to specify the middleware mode in your `vite.config.js`:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	server: {
@@ -20,7 +20,7 @@ export default {
 
 You can add your custom middleware via the `configureServer` hook in your `vite.config.js`. The `configureServer` function will be called with a `ViteDevServer` object, and you can use its `app` property, an instance of `koa`, to add middleware.
 
-```javascript
+```js
 // vite.config.js
 export default {
 	server: {
@@ -43,7 +43,7 @@ In the above example, if you navigate to `http://localhost:<PORT>/hello`, you wi
 
 You can also combine Vite with existing backend servers or frameworks like Express:
 
-```javascript
+```js
 // server.js
 const express = require('express');
 const { createServer } = require('vite');

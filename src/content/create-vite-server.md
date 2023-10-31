@@ -16,7 +16,7 @@ npm install vite
 
 Then you can import the `createViteServer` function and use it in your Node.js script:
 
-```javascript
+```js
 import { createServer as createViteServer } from 'vite';
 
 async function start() {
@@ -35,7 +35,7 @@ start();
 
 The `createViteServer` function takes an optional configuration object that allows you to specify Vite's behavior. These options are the same as what you can provide in a `vite.config.js` file:
 
-```javascript
+```js
 const vite = await createViteServer({
 	plugins: [
 		/* your plugins */

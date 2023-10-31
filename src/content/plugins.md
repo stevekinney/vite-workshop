@@ -37,7 +37,7 @@ A basic Vite plugin can be an object with properties that define its functionali
 
 Example:
 
-```javascript
+```js
 // my-plugin.js
 export default function myPlugin(options = {}) {
 	return {
@@ -53,7 +53,7 @@ export default function myPlugin(options = {}) {
 
 Add your plugin in `vite.config.js`:
 
-```javascript
+```js
 // vite.config.js
 import myPlugin from './my-plugin.js';
 
@@ -73,7 +73,7 @@ export default {
 
 ## Example of Universal Hook
 
-```javascript
+```js
 {
   name: 'universal-hook-example',
   load(id) {
@@ -84,7 +84,7 @@ export default {
 
 ## Example of Vite Specific Hook
 
-```javascript
+```js
 {
   name: 'vite-specific-hook-example',
   configResolved(config) {

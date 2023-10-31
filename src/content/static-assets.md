@@ -27,7 +27,7 @@ For example, if you have an image at `public/my-image.jpg`, it will be available
 
 Although the default directory for static files is `public`, you can configure this using the `publicDir` option in `vite.config.js`:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	publicDir: 'my-public-folder'
@@ -40,7 +40,7 @@ You can also import and serve static files directly from your source code. This 
 
 For instance, you can import an image in a JavaScript file:
 
-```javascript
+```js
 import myImage from 'src/images/my-image.jpg';
 
 // myImage now contains the resolved URL of the image.

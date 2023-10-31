@@ -17,7 +17,7 @@ VITE_API_URL=https://myapi.com
 
 In your application, you can access this variable as follows:
 
-```javascript
+```js
 console.log(import.meta.env.VITE_API_URL); // Outputs: "https://myapi.com"
 ```
 
@@ -40,7 +40,7 @@ Files are loaded in that order, and variables from later files will overwrite va
 
 In the `vite.config.js` file, you can also access the environment variables via the `process.env` object, but you don't need the `VITE_` prefix there.
 
-```javascript
+```js
 // vite.config.js
 export default {
 	plugins: [
@@ -68,7 +68,7 @@ You can also set environment variables directly in your package.json scripts:
 
 Since environment variables are strings, you may want to declare their types if you're using TypeScript. Create a `env.d.ts` file for type declarations:
 
-```typescript
+```ts
 interface ImportMetaEnv {
 	VITE_API_URL: string;
 	// define other variables here

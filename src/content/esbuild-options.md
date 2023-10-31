@@ -8,7 +8,7 @@ The `esbuild` option within Vite's `optimizeDeps` configuration allows you to pa
 
 Here's a simple example:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	optimizeDeps: {
@@ -34,7 +34,7 @@ Here are some esbuild options that might be useful in the context of `optimizeDe
 
 Here's how you could use the `define` option for example:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	optimizeDeps: {

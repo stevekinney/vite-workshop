@@ -12,7 +12,7 @@ To set up a proxy, you can modify your `vite.config.js` to include a `proxy` obj
 
 Here's an example:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	server: {
@@ -29,7 +29,7 @@ In this configuration, any request that starts with `/api` on your development s
 
 For more advanced use-cases, you can use an object for detailed configuration:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	server: {
@@ -54,7 +54,7 @@ In this configuration:
 
 You can also proxy WebSocket requests:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	server: {
@@ -74,7 +74,7 @@ In this example, WebSocket requests to `/socket` will be proxied to `http://loca
 
 If you have multiple different APIs or services running on different ports, you can set multiple proxy rules:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	server: {
@@ -90,7 +90,7 @@ export default {
 
 To handle secure HTTPS proxying, you can include additional options:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	server: {

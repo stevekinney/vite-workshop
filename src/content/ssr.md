@@ -24,7 +24,7 @@ Vite supports "hydration," which is the process of binding event listeners and e
 
 In Vite, you can specify separate entry points for the server and client using the `vite.config.js` file:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	build: {
@@ -40,7 +40,7 @@ export default {
 
 Inside these entry points, you can use special SSR flags provided by `import.meta` to conditionally run code:
 
-```javascript
+```js
 if (import.meta.env.SSR) {
 	// Server-only code
 } else {
@@ -97,7 +97,7 @@ npm install
 
 In your `vite.config.js`, specify SSR-specific configurations:
 
-```javascript
+```js
 // vite.config.js
 export default {
 	ssr: {
@@ -110,7 +110,7 @@ export default {
 
 Create a `server.js` file (or `server.ts` if you're using TypeScript) where you'll implement the server logic. Here's an example using Express:
 
-```javascript
+```js
 const express = require('express');
 const { createServer: createViteServer } = require('vite');
 
@@ -139,7 +139,7 @@ createServer();
 
 You'll need to render your app on the server and send the HTML to the client. Here's an example using Vue:
 
-```javascript
+```js
 // Inside your server.js
 app.use('*', async (req, res) => {
 	const url = req.originalUrl;
@@ -169,7 +169,7 @@ app.use('*', async (req, res) => {
 
 In your client entry (usually `main.js` or `main.ts`), add logic to hydrate the application:
 
-```javascript
+```js
 // For Vue
 import { createApp } from 'vue';
 import App from './App.vue';
@@ -204,7 +204,7 @@ Implementing Server-Side Rendering (SSR) with Vite involves several steps. Here'
 
 3. **Create `vite.config.js`:** Create a configuration file for Vite at the root of your project.
 
-   ```javascript
+   ```js
    // vite.config.js
    export default {
    	ssr: {
@@ -228,7 +228,7 @@ Implementing Server-Side Rendering (SSR) with Vite involves several steps. Here'
 
 Here's an example using React. You would include code that hydrates your app in the `client.js` file.
 
-```javascript
+```js
 // src/client.js
 import React from 'react';
 import { hydrate } from 'react-dom';
@@ -241,7 +241,7 @@ hydrate(<App />, document.getElementById('app'));
 
 In the `server.js` file, you can include code to render your app server-side using frameworks like Express.
 
-```javascript
+```js
 // src/server.js
 import express from 'express';
 import React from 'react';
@@ -274,7 +274,7 @@ server.listen(3000);
 
 Create the React component you want to render. This is just a simple example.
 
-```javascript
+```js
 // src/App.js
 import React from 'react';
 
