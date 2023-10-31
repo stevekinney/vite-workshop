@@ -78,7 +78,7 @@ Implementing Server-Side Rendering (SSR) with Vite involves several key steps, f
 
 You can start by creating a new Vite project or adapting an existing one. For this example, let's create a new project:
 
-```bash
+```
 vite init
 ```
 
@@ -88,7 +88,7 @@ Choose a template based on the framework you're using (Vanilla, Vue, React, etc.
 
 Navigate to your project directory and install necessary packages:
 
-```bash
+```
 cd my-vite-project
 npm install
 ```
@@ -182,7 +182,7 @@ app.mount('#app');
 
 Run the server by executing:
 
-```bash
+```
 node server.js
 ```
 
@@ -198,7 +198,7 @@ Implementing Server-Side Rendering (SSR) with Vite involves several steps. Here'
 
 2. **Install Vite:** Install Vite as a dev dependency.
 
-   ```bash
+   ```
    npm install --save-dev vite
    ```
 
@@ -289,7 +289,7 @@ export default App;
 
 1. **Install Dependencies:** If you're using React, you'll need to install it:
 
-   ```bash
+   ```
    npm install react react-dom
    ```
 
@@ -307,14 +307,14 @@ export default App;
 
 3. **Run the Development Server:**
 
-   ```bash
+   ```
    npm run dev
    ```
 
 4. **Run the SSR Server:** In another terminal:
 
-   ```bash
-   npm run serve
-   ```
+```
+npm run serve
+```
 
 Visit `http://localhost:3000` to see your SSR app in action.

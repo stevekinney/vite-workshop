@@ -58,7 +58,7 @@ Vite allows you to use environment variables, which you can also utilize when de
 
 If you're having issues with static files not showing up, you can run Vite in debug mode to get detailed logs that might help you diagnose the problem:
 
-```bash
+```
 DEBUG=vite:* vite
 ```
 

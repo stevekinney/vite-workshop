@@ -10,7 +10,7 @@ The `createViteServer` function is part of Vite's Node.js API, allowing you to p
 
 To get started, you first need to install Vite as a dependency:
 
-```bash
+```
 npm install vite
 ```
 

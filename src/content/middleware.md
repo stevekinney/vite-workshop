@@ -74,6 +74,6 @@ start();
 
 For debugging, you can run Vite in debug mode to see detailed logs:
 
-```bash
+```
 DEBUG=vite:* vite
 ```

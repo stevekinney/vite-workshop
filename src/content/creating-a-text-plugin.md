@@ -53,7 +53,7 @@ export default function myVitePlugin() {
 
 Create a simple Vite project or use an existing one and install the plugin as a dependency:
 
-```bash
+```
 npm install path/to/your/plugin/directory
 ```
 

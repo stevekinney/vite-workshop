@@ -16,7 +16,7 @@ Vite offers fast development, lean builds, and has a simple config API. It also 
 
 You'll need to add a Vite plugin to enable Module Federation. One such plugin is `vite-plugin-module-federation`. Install it as a dependency:
 
-```bash
+```
 npm install @originjs/vite-plugin-federation --save-dev
 ```
 

@@ -8,13 +8,13 @@ If you're using TypeScript and CSS modules, you may want type support for your C
 
 Here's how you might use `typed-css-modules`:
 
-```bash
+```
 npm install -D typed-css-modules
 ```
 
 Generate types:
 
-```bash
+```
 tcm src -w
 ```
 
