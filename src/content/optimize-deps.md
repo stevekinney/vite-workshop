@@ -1,3 +1,9 @@
+---
+title: Optimizing Dependencies
+---
+
+# Optimizing Dependencies
+
 The `optimizeDeps` configuration option in Vite controls the optimization behavior of dependencies (i.e., modules installed from `node_modules`). This is particularly important for improving the development server startup time and ensuring compatibility with various npm packages.
 
 When you run Vite for the first time or when you install new dependencies, Vite pre-bundles these dependencies using esbuild by default (or Rollup if you specify it). Pre-bundling is the process of converting the dependencies into ESM (ECMAScript Modules) format and bundling them together into smaller chunks. This is done to improve both the startup time of the development server and the performance of handling these dependencies during development and production builds.

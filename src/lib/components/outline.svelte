@@ -17,8 +17,10 @@
 	</Section>
 	<Section title="Styling with Vite">
 		<Link href="/css">Working with CSS</Link>
+		<Link href="/css-modules">CSS Modules</Link>
 		<Link href="/postcss">PostCSS</Link>
 		<Link href="/sass">Using Sass with Vite</Link>
+		<Link href="/css-and-typescript">CSS and TypeScript</Link>
 	</Section>
 	<Section title="Assets">
 		<Link href="/static-assets">Working with Static Assets</Link>
@@ -45,10 +47,10 @@
 	</Section>
 	<Section title="Plugins and Templates">
 		<Link href="/plugins">Plugins</Link>
-		<Link href="/templates">Creating a Template</Link>
+		<Link href="/plugins-virtual-modules">Virtual Modules</Link>
 	</Section>
 	<Section title="Appendix">
-		<Link href="/dependency-prebundling">Dependency PreBundling</Link>
+		<Link href="/dependency-prebundling">Dependency Pre-Bundling</Link>
 		<Link href="/link-and-force-optimization">Link and Force Optimization</Link>
 		<Link href="/optimize-deps">Optimize Dependencies</Link>
 		<Link href="/esbuild-options">ESBuild Options</Link>

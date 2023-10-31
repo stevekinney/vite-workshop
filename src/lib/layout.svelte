@@ -16,6 +16,6 @@
 	<meta property="og:type" content="article" />
 </svelte:head>
 
-<article class="prose">
+<article class="prose w-full">
 	<slot />
 </article>

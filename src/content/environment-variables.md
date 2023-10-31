@@ -10,7 +10,7 @@ Environment variables in Vite provide a way to inject runtime values into your a
 
 To define environment variables, you can create a `.env` file at the root of your Vite project. The variables in this file can then be accessed in your application code.
 
-```env
+```
 # .env file
 VITE_API_URL=https://myapi.com
 ```

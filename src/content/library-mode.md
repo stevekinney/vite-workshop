@@ -4,7 +4,7 @@ title: Library Mode
 
 # Library Mode
 
-Outline:
+This one is a bit long, so let's start with an outline. Here's what we're about to cover.
 
 - Basic usage
 - Exporting types
@@ -17,7 +17,7 @@ Outline:
   - Set up `sideEffects` entry in `package.json`.
   - Set up a `prepublish` step.
 - Multiple entries.
-- Research: [`build.cssCodeSplit`](https://vitejs.dev/config/build-options.html#build-csscodesplit)
+- [`build.cssCodeSplit`](https://vitejs.dev/config/build-options.html#build-csscodesplit)
 
 Library mode in Vite allows you to build your code as a reusable library. This is particularly useful when you want to create a package that can be shared across multiple projects, be it open source or for internal usage. In library mode, Vite will produce a bundle optimized to be used as an npm package or via a CDN as a global variable in the browser.
 

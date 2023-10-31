@@ -4,7 +4,7 @@
 
 <div class="mx-auto flex flex-col-reverse gap-8 md:flex-row">
 	<Outline />
-	<section id="content">
+	<section id="content" class="w-full">
 		<slot />
 	</section>
 </div>
