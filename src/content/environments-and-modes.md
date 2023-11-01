@@ -4,41 +4,64 @@ title: Environments and Modes
 
 # Environments and Modes
 
-1. **`import.meta.env`:** A special object for accessing environment variables.
+Some things to cover:
+
+1. **`import[dot]meta[dot]env`:** A special object for accessing environment variables.
 2. **`.env` Files:** Used to define environment variables.
 3. **Modes:** Development, production, etc., to manage multiple environment setups.
 4. **TypeScript IntelliSense:** Autocompletion for custom variables.
-5. **HTML Env Replacement:** Using env variables in HTML files.
+5. **HTML Env Replacement:** Using `env` variables in HTML files.
 6. **Security Considerations:** Warnings about sensitive data.
 
-## `import.meta.env`
+## Built-in Variables
 
-- **Built-in Variables:**
-  - `MODE`: Running mode (development, production, etc.)
-  - `BASE_URL`: Base URL of the app
-  - `PROD`: Boolean, indicating if in production
-  - `DEV`: Boolean, indicating if in development
-  - `SSR`: Boolean, indicating if in server-side rendering mode
+- `MODE`: Running mode (development, production, etc.)
+- `BASE_URL`: Base URL of the app
+- `PROD`: Boolean, indicating if in production
+- `DEV`: Boolean, indicating if in development
+- `SSR`: Boolean, indicating if in server-side rendering mode
 - **Production Replacement:** In production, these variables are statically replaced. Special consideration is needed for dynamic key access and Vue templates.
 
 ## `.env` Files
 
-- **Loading Mechanism:** Uses `dotenv` and `dotenv-expand` libraries to load variables from `.env` files located in a specific directory.
-- **Files:**
-  - `.env`: Loaded always
-  - `.env.local`: Loaded always, ignored by git
-  - `.env.[mode]`: Loaded in a specified mode
-  - `.env.[mode].local`: Loaded in a specified mode, ignored by git
-- **Priority:**
-  - Variables existing at the time of Vite execution take the highest priority.
-  - Specific mode files override generic ones.
-- **Security:**
-  - Only variables prefixed with `VITE_` are exposed to the client.
-  - Sensitive information should not be included.
+Vite uses `dotenv` and `dotenv-expand` libraries to load variables from `.env` files located in a specific directory.
+
+- `.env`: Loaded always
+- `.env.local`: Loaded always, ignored by git
+- `.env.[mode]`: Loaded in a specified mode
+- `.env.[mode].local`: Loaded in a specified mode, ignored by git
+
+There are some rules in terms of priority.
+
+- Variables existing at the time of Vite execution take the highest priority.
+- Specific mode files override generic ones.
+
+Vite is also looking out for your security.
+
+- Only variables prefixed with `VITE_` are exposed to the client.
+- Sensitive information should not be included. (Duh.)
 
 ## TypeScript IntelliSense
 
-- Custom `.d.ts` file can be created to provide TypeScript autocompletion for custom variables prefixed with `VITE_`.
+Custom `.d.ts` file can be created to provide TypeScript autocompletion for custom variables prefixed with `VITE_`.
+
+Here is the one that I grabbed from [my own project](https://github.com/temporalio/ui/blob/main/src/env.d.ts).
+
+```ts
+/// <reference types="vite/client" />
+
+type Vitest = import('vitest');
+
+interface ImportMetaEnv {
+	readonly VITE_TEMPORAL_UI_BUILD_TARGET: string;
+	readonly VITE_API: string;
+}
+
+interface ImportMeta {
+	readonly env: ImportMetaEnv;
+	readonly vitest: Vitest;
+}
+```
 
 ## HTML Env Replacement
 
