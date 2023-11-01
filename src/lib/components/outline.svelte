@@ -40,6 +40,8 @@
 		<Link href="/library-mode">Library Mode</Link>
 		<Link href="/library-mode-components">Library Mode with Components</Link>
 		<Link href="/module-federation">Module Federation</Link>
+		<Link href="/glob-entry">Glob Entry</Link>
+		<Link href="/preserve-modules">preserveModules</Link>
 	</Section>
 	<Section title="Server Integration">
 		<Link href="/create-vite-server">createViteServer</Link>
@@ -49,6 +51,8 @@
 	<Section title="Plugins and Templates">
 		<Link href="/plugins">Plugins</Link>
 		<Link href="/plugins-virtual-modules">Virtual Modules</Link>
+		<Link href="/plugin-inline-css">Inline CSS Plugin</Link>
+		<Link href="/plugin-markdown">Markdown Plugin</Link>
 	</Section>
 	<Section title="Appendix">
 		<Link href="/dependency-prebundling">Dependency Pre-Bundling</Link>
