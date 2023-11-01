@@ -20,3 +20,4 @@ We're going to use the following repositories during our journey together.
 
 - [vite-starter](https://github.com/stevekinney/vite-starter)
 - [vite-components](https://github.com/stevekinney/vite-components)
+- [vite-monorepo](https://github.com/stevekinney/vite-monorepo)
