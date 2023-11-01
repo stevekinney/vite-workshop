@@ -31,6 +31,7 @@ type ContentFile =
 	| 'plugins'
 	| 'postcss'
 	| 'preserve-modules'
+	| 'preview'
 	| 'proxying'
 	| 'sass'
 	| 'ssr'
