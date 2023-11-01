@@ -32,9 +32,10 @@
 	</Section>
 	<Section title="Importing">
 		<Link href="/import-meta">import.meta</Link>
+		<Link href="/json-named-exports">JSON Named Exports</Link>
 		<Link href="/conditional-imports">Conditional Imports</Link>
 		<Link href="/glob-import">Glob Import</Link>
-		<Link href="/json-named-exports">JSON Named Export</Link>
+		<Link href="/image-tools">Vite Image Tools</Link>
 	</Section>
 	<Section title="Building Libraries">
 		<Link href="/library-mode">Library Mode</Link>

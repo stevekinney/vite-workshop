@@ -4,6 +4,12 @@ title: PostCSS
 
 # Usage with PostCSS
 
+Vite supports [PostCSS](https://postcss.org/) out of the box. There is basically nothing that you need to do on your end.
+
+Here is a list of a bunch of [PostCSS plugins](https://postcss.org/docs/postcss-plugins) that you can use.
+
+## Tasting Notes
+
 - Auto-detection of valid PostCSS configurations
 - All imported CSS will be processed by PostCSS
 - Minification runs after PostCSS, uses `build.cssTarget` option
