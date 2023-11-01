@@ -52,5 +52,3 @@ export default {
 1. **Compatibility**: Since Vite is using esbuild for optimization, the options you pass must be compatible with esbuild's API.
 2. **Conflict Resolution**: Be cautious when setting esbuild options as they can potentially conflict with other Vite options or plugins you may be using.
 3. **Documentation**: Always consult the [esbuild documentation](https://esbuild.github.io/api/) for the most accurate and detailed information about these options.
-
-Understanding the `esbuild` options within `optimizeDeps` can offer greater flexibility and control over the build and optimization process. This is particularly useful for developers who have specific optimization requirements that are not handled out-of-the-box by Vite.
