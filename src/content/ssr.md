@@ -4,19 +4,11 @@ title: Server-Side Rendering
 
 # Server-Side Rendering
 
-Server-Side Rendering (SSR) is a technique used in web development to pre-render a client-side application on the server, sending the fully rendered page to the client. This can improve initial page load performance and enhance SEO. Vite offers first-class support for SSR, providing a more streamlined development experience.
-
-## How Vite Supports SSR
-
-### Simplified Configuration
+Server-Side Rendering (SSR) does what it says on the tin. It let's us pre-render a client-side application on the server, sending the fully rendered page to the client. This can improve initial page load performance and enhance SEO. Vite offers first-class support for server-side rendering, providing a more streamlined development experience.
 
 Vite aims to simplify the SSR setup process. You don't need to maintain separate build configurations for the server and client; Vite handles this automatically.
 
-### Fast Development
-
-Just like in the client-side scenario, Vite offers fast reloads for SSR development as well. Code changes are propagated almost instantly, without having to restart the entire server.
-
-### Hydration
+## Hydration
 
 Vite supports "hydration," which is the process of binding event listeners and executing other client-side logic on the pre-rendered HTML content received from the server.
 
@@ -67,33 +59,9 @@ Vite's SSR output is not tied to a specific Node.js server framework. You can in
 3. **Flexible:** You're not locked into a specific framework or server environment.
 4. **Plugin Ecosystem:** Easily extendable to support various tools and libraries commonly used in SSR contexts.
 
-Implementing Server-Side Rendering (SSR) with Vite involves several key steps, from modifying your Vite configuration to adapting your application code for both server-side and client-side execution. Below is a step-by-step guide to help you set up SSR in a Vite project:
+Implementing Server-Side Rendering (SSR) with Vite involves a few key steps, from modifying your Vite configuration to adapting your application code for both server-side and client-side execution. Below is a step-by-step guide to help you set up SSR in a Vite project:
 
-## Prerequisites
-
-- Make sure you have Node.js installed.
-- Install Vite if you haven't: `npm install -g vite`
-
-## Step 1: Initialize a Vite Project
-
-You can start by creating a new Vite project or adapting an existing one. For this example, let's create a new project:
-
-```
-vite init
-```
-
-Choose a template based on the framework you're using (Vanilla, Vue, React, etc.).
-
-## Step 2: Install Dependencies
-
-Navigate to your project directory and install necessary packages:
-
-```
-cd my-vite-project
-npm install
-```
-
-## Step 3: Update Vite Configuration
+## Update Vite Configuration
 
 In your `vite.config.js`, specify SSR-specific configurations:
 
@@ -106,7 +74,7 @@ export default {
 };
 ```
 
-## Step 4: Create Server Entry Point
+## Create Server Entry Point
 
 Create a `server.js` file (or `server.ts` if you're using TypeScript) where you'll implement the server logic. Here's an example using Express:
 
@@ -121,6 +89,7 @@ async function createServer() {
 	const vite = await createViteServer({
 		server: { middlewareMode: 'ssr' }
 	});
+
 	app.use(vite.middlewares);
 
 	app.use('*', async (req, res) => {
@@ -135,7 +104,7 @@ async function createServer() {
 createServer();
 ```
 
-## Step 5: Implement SSR Logic
+## Implement SSR Logic
 
 You'll need to render your app on the server and send the HTML to the client. Here's an example using Vue:
 
@@ -165,20 +134,19 @@ app.use('*', async (req, res) => {
 });
 ```
 
-## Step 6: Client Hydration
+## Client Hydration
 
 In your client entry (usually `main.js` or `main.ts`), add logic to hydrate the application:
 
 ```js
-// For Vue
-import { createApp } from 'vue';
-import App from './App.vue';
+import React from 'react';
+import { hydrate } from 'react-dom';
+import App from './App';
 
-const app = createApp(App);
-app.mount('#app');
+hydrate(<App />, document.getElementById('app'));
 ```
 
-## Step 7: Running the Server
+## Running the Server
 
 Run the server by executing:
 
@@ -187,134 +155,3 @@ node server.js
 ```
 
 Your application should now be running with SSR on `http://localhost:3000`.
-
----
-
-Implementing Server-Side Rendering (SSR) with Vite involves several steps. Here's a simplified example to guide you through the process.
-
-## Project Setup
-
-1. **Initialize a new project:** Create a new directory and initialize a new Node.js project using `npm init` or `yarn init`.
-
-2. **Install Vite:** Install Vite as a dev dependency.
-
-   ```
-   npm install --save-dev vite
-   ```
-
-3. **Create `vite.config.js`:** Create a configuration file for Vite at the root of your project.
-
-   ```js
-   // vite.config.js
-   export default {
-   	ssr: {
-   		noExternal: ['your-external-dependency']
-   	}
-   };
-   ```
-
-4. **Setup Source Files:** Create the source files and directories. Here's a sample directory structure:
-
-   ```
-   - src/
-     - client.js
-     - server.js
-     - App.js
-   - package.json
-   - vite.config.js
-   ```
-
-## Client Entry (Client-Side Code)
-
-Here's an example using React. You would include code that hydrates your app in the `client.js` file.
-
-```js
-// src/client.js
-import React from 'react';
-import { hydrate } from 'react-dom';
-import App from './App';
-
-hydrate(<App />, document.getElementById('app'));
-```
-
-## Server Entry (Server-Side Code)
-
-In the `server.js` file, you can include code to render your app server-side using frameworks like Express.
-
-```js
-// src/server.js
-import express from 'express';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import App from './App';
-
-const server = express();
-
-server.get('*', (req, res) => {
-	const appString = renderToString(<App />);
-	const html = `
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>Vite SSR</title>
-    </head>
-    <body>
-      <div id="app">${appString}</div>
-      <script src="/@vite/client"></script>
-      <script src="/src/client.js"></script>
-    </body>
-  </html>`;
-	res.send(html);
-});
-
-server.listen(3000);
-```
-
-## App Component
-
-Create the React component you want to render. This is just a simple example.
-
-```js
-// src/App.js
-import React from 'react';
-
-const App = () => {
-	return <div>Hello from SSR!</div>;
-};
-
-export default App;
-```
-
-## Running the SSR App
-
-1. **Install Dependencies:** If you're using React, you'll need to install it:
-
-   ```
-   npm install react react-dom
-   ```
-
-2. **Update package.json:** Add the following scripts:
-
-   ```json
-   {
-   	"scripts": {
-   		"dev": "vite",
-   		"build": "vite build",
-   		"serve": "node src/server.js"
-   	}
-   }
-   ```
-
-3. **Run the Development Server:**
-
-   ```
-   npm run dev
-   ```
-
-4. **Run the SSR Server:** In another terminal:
-
-```
-npm run serve
-```
-
-Visit `http://localhost:3000` to see your SSR app in action.
