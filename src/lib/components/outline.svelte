@@ -14,7 +14,6 @@
 		<Link href="/css">Working with CSS</Link>
 		<Link href="/postcss">PostCSS</Link>
 		<Link href="/sass">Using Sass with Vite</Link>
-		<Link href="/css-and-typescript">CSS and TypeScript</Link>
 	</Section>
 	<Section title="TypeScript and Frameworks">
 		<Link href="/typescript">Vite with TypeScript</Link>
@@ -24,17 +23,17 @@
 	<Section title="Assets">
 		<Link href="/static-assets">Working with Static Assets</Link>
 		<Link href="/assets-include">assetsInclude</Link>
-	</Section>
-	<Section title="Environments and Build Modes">
-		<Link href="/environments-and-modes">Build Modes</Link>
-		<Link href="/environment-variables">Environment Variables</Link>
+		<Link href="/image-tools">Vite Image Tools</Link>
 	</Section>
 	<Section title="Importing">
 		<Link href="/import-meta">import.meta</Link>
 		<Link href="/json-named-exports">JSON Named Exports</Link>
 		<Link href="/conditional-imports">Conditional Imports</Link>
 		<Link href="/glob-import">Glob Import</Link>
-		<Link href="/image-tools">Vite Image Tools</Link>
+	</Section>
+	<Section title="Environments and Build Modes">
+		<Link href="/environments-and-modes">Build Modes</Link>
+		<Link href="/environment-variables">Environment Variables</Link>
 	</Section>
 	<Section title="Building Libraries">
 		<Link href="/library-mode">Library Mode</Link>
@@ -55,6 +54,7 @@
 		<Link href="/plugin-markdown">Markdown Plugin</Link>
 	</Section>
 	<Section title="Appendix">
+		<Link href="/css-and-typescript">CSS and TypeScript</Link>
 		<Link href="/dependency-prebundling">Dependency Pre-Bundling</Link>
 		<Link href="/link-and-force-optimization">Link and Force Optimization</Link>
 		<Link href="/optimize-deps">Optimize Dependencies</Link>

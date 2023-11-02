@@ -2,6 +2,10 @@
 title: Using Templates
 ---
 
+<script lang="ts">
+  import { Callout } from '$components';
+</script>
+
 # Using Templates
 
 You can quickly scaffold out a new Vite project using `npm create`.
@@ -26,6 +30,10 @@ You will be taken through a bunch of steps. Follow the prompts.
 ✔ Select a framework: › React
 ✔ Select a variant: › TypeScript + SWC
 ```
+
+<Callout title="A Guided Tour">
+I'm going to generate a template and take you on a quick your. You're welcome to follow along with me or pick a totally different framework if there is something that you're more interested in.
+</Callout>
 
 ## Community Templates
 

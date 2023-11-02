@@ -16,5 +16,5 @@ export default defineConfig({
 });
 ```
 
-- You can see the list of offical plugins [here](https://vitejs.dev/plugins/#official-plugins).
+- You can see the list of official plugins [here](https://vitejs.dev/plugins/#official-plugins).
 - There are also [a bunch of community plugins](https://github.com/vitejs/awesome-vite#plugins).

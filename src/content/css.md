@@ -61,6 +61,8 @@ This is the resulting class name.
 <p id="count" class="_count_1o9rn_1">4</p>
 ```
 
+<div class="exercise">
+
 ### Exercise: Add Banner Styles
 
 Can you use `banner.module.css` as a CSS module?
@@ -79,6 +81,8 @@ closeButton.classList.add(styles.button);
 </details>
 
 Notice how the CSS file is also dynamically added to the DOM as needed.
+
+</div>
 
 **The moral of the story**: Dealing with asynchronous module loading is definitely less easy than just writing some `import` statements at the top of the file, but it also gives you the ability to slim down the size of your bundle and load _both_ CSS and JavaScript on an as-needed basis.
 

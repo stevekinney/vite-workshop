@@ -24,8 +24,3 @@ We _could_ change the import to `./banner.module.scss`, but you'll see we get a 
 > Preprocessor dependency "sass" not found. Did you install it? Try `npm install -D sass`.
 
 Well, I guess we can handle this. That's it. Everything works as expected.
-
-## Aliases and URL Rebasing in Pre-processors
-
-- Also available for Sass and Less
-- Not supported for Stylus due to API constraints

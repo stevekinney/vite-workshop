@@ -8,7 +8,7 @@ The `import.meta` object is a meta-property that provides metadata about the mod
 
 In Vite, `import.meta` serves multiple purposes and allows you to write more dynamic and context-aware code. Here are some ways `import.meta` is commonly used:
 
-### Environment Variables
+### [Environment Variables](./environment-variables.md)
 
 You can access environment variables in your Vite project through `import.meta.env`. Variables prefixed with `VITE_` in your `.env` files are exposed to your code via `import.meta.env`.
 
@@ -16,7 +16,7 @@ You can access environment variables in your Vite project through `import.meta.e
 console.log(import.meta.env.VITE_API_URL); // Outputs: "https://myapi.com"
 ```
 
-### Hot Module Replacement (HMR)
+### [Hot Module Replacement (HMR)](./hot-module-replacement.md)
 
 Vite uses `import.meta.hot` for Hot Module Replacement, allowing you to replace modules without reloading the entire page. This is essential for a fast development experience.
 
@@ -36,7 +36,7 @@ if (import.meta.hot) {
 const moduleUrl = new URL('some-asset.png', import.meta.url);
 ```
 
-### Glob Import
+### [Glob Import](./glob-import.md)
 
 Vite extends `import.meta` to add a globbing feature, which allows you to import multiple modules with a single statement.
 

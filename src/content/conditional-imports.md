@@ -1,8 +1,8 @@
 ---
-title: Conditional Imports
+title: Conditional Imports and Dynamic Imports
 ---
 
-# Conditional Imports
+# Conditional Imports and Dynamic Imports
 
 Conditional imports allow you to dynamically load different modules based on certain conditions, such as the current environment (development, production, etc.), the platform (browser, Node.js), or even custom conditions that you define.
 
@@ -60,30 +60,26 @@ if (__MY_CONDITION__ === 'some value') {
 }
 ```
 
-### Using Dynamic Import with `vite-plugin-conditional-import`
+### Using Dynamic Import with `vite-plugin-dynamic-import`
 
-While Vite doesn't offer built-in direct support for conditional imports in `import` statements, there's a third-party plugin called `vite-plugin-conditional-import` that provides such a feature.
+While Vite doesn't offer built-in direct support for conditional imports in `import` statements, there's a third-party plugin called [`vite-plugin-dynamic-import`](https://www.npmjs.com/package/vite-plugin-dynamic-import) that provides such a feature.
 
 ```
-npm install vite-plugin-conditional-import
+npm install vite-plugin-dynamic-import
 ```
 
 Then, add it to your `vite.config.js`:
 
-```ts
-import ConditionalImport from 'vite-plugin-conditional-import';
+```js
+import dynamicImport from 'vite-plugin-dynamic-import';
 
 export default {
-	plugins: [ConditionalImport()]
+	plugins: [dynamicImport()]
 };
 ```
 
 This plugin allows you to write conditional imports directly in the `import` statements based on conditions you define.
 
-### Why They're Cool
-
-Conditional imports can be good for:
-
-- Code splitting: Only load the code you need, when you need it.
-- Environment-specific behavior: Use different modules for development and production.
-- Platform-specific code: Use different modules for different platforms (browser, Node.js, etc.).
+```js
+import(`./content/${variable}.js`);
+```
