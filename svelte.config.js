@@ -8,14 +8,14 @@ import { mdsvex, escapeSvelte } from 'mdsvex';
 const mdsvexOptions = {
 	extensions: ['.md'],
 	rehypePlugins: [slug],
-	layout: './src/lib/layout.svelte',
-	highlight: {
-		highlighter: async (code, lang = 'text') => {
-			const highlighter = await shiki.getHighlighter({ theme: 'poimandres' });
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
-			return `{@html \`${html}\` }`;
-		}
-	}
+	layout: './src/lib/layout.svelte'
+	// highlight: {
+	// 	highlighter: async (code, lang = 'text') => {
+	// 		const highlighter = await shiki.getHighlighter({ theme: 'poimandres' });
+	// 		const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
+	// 		return `{@html \`${html}\` }`;
+	// 	}
+	// }
 };
 
 /** @type {import('@sveltejs/kit').Config} */
