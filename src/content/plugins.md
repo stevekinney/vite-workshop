@@ -38,7 +38,6 @@ A basic Vite plugin can be an object with properties that define its functionali
 Example:
 
 ```js
-// my-plugin.js
 export default function myPlugin(options = {}) {
 	return {
 		name: 'my-plugin',

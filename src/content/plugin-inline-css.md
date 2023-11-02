@@ -30,7 +30,7 @@ function inlineCSS() {
 
 ## A Lazier Way That You Shouldn't Do
 
-```html
+```
 <script type="module">
 	import styles from './src/style.css?inline';
 

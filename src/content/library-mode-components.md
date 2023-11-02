@@ -14,7 +14,7 @@ We need to give Vite an entry point for our library. I just want to export the c
 
 It's going to look something like this:
 
-```ts
+```js
 export * from './button';
 export * from './input';
 ```
@@ -23,7 +23,7 @@ export * from './input';
 
 Let's start with something simple, like this:
 
-```ts
+```js
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
@@ -59,7 +59,7 @@ So, let's call that out as an external dependency.
 
 Rollup has an option for us. I'm going to tell it not to include all of the React stuff. If you use a different framework, this obviously be a little different, but the basic idea still applies.
 
-```ts
+```js
 export default defineConfig({
 	plugins: [react()],
 	build: {
@@ -100,7 +100,7 @@ Vite does not generate TypeScript types by default. You will have to include a T
 
 My first thought would be to try to use TypeScript's build-in compiler.
 
-```json
+```
 // package.json
 {
 	"scripts": {
@@ -145,7 +145,7 @@ dts({
 
 ## A Special TypeScript Configuration
 
-```json
+```
 {
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
@@ -228,7 +228,7 @@ copyPublicDir: false,
 
 ## Adding Your Library to Your `package.json`
 
-```json
+```
 {
 	"main": "./dist/very-fancy-components.umd.cjs",
 	"module": "./dist/very-fancy-components.js",
