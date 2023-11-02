@@ -4,6 +4,8 @@ title: Working with CSS
 
 # Working with CSS
 
+Writing and bundling JavaScript is only part of the battle. A lot of times we tend to need to style our applications as well. To no one's surprise, that's pretty straight forward as well.
+
 ## Adding CSS
 
 Vite gives a few different ways to add CSS.
@@ -78,34 +80,30 @@ closeButton.classList.add(styles.button);
 
 Notice how the CSS file is also dynamically added to the DOM as needed.
 
-## CSS Importing
+**The moral of the story**: Dealing with asynchronous module loading is definitely less easy than just writing some `import` statements at the top of the file, but it also gives you the ability to slim down the size of your bundle and load _both_ CSS and JavaScript on an as-needed basis.
 
-- Injection of `.css` files into a page via `<style>` tags
-- Support for Hot Module Replacement (HMR)
-- Retrieval of processed CSS as a string as the module's default export
+## Tasting Notes
 
-## `@import` Handling
+Here are some additional notes on working with CSS that are a little esoteric. I'll leave these here for you to peruse if you're interested.
+
+### `@import` Handling
 
 - Support for CSS `@import` inlining via `postcss-import`
 - Vite aliases are respected for `@import`
 - `url()` references are rebased automatically, ensuring correctness across different directories
 
-## Lightning CSS
+### Lightning CSS
 
 - Available starting Vite 4.4
 - Enabled by adding `css.transformer: 'lightningcss'` to config
 - Requires installation of `lightningcss` dependency
 
-### Configuration
+#### Configuration
 
 - `css.lightningcss` config option
 - `css.lightningcss.cssModules` for CSS Modules
 - `build.cssMinify: 'lightningcss'` for minification
 
-### Limitations
+#### Limitations
 
 - Doesn't support CSS Pre-processors
-
-## Security and Deprecated Features
-
-- Default and named imports from CSS files are deprecated, use `?inline` instead

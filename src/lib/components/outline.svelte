@@ -10,17 +10,16 @@
 		<Link href="/core-features">Core Features</Link>
 		<Link href="/basic-setup">Basic Setup</Link>
 	</Section>
+	<Section title="Styling with Vite">
+		<Link href="/css">Working with CSS</Link>
+		<Link href="/postcss">PostCSS</Link>
+		<Link href="/sass">Using Sass with Vite</Link>
+		<Link href="/css-and-typescript">CSS and TypeScript</Link>
+	</Section>
 	<Section title="TypeScript and Frameworks">
 		<Link href="/typescript">Vite with TypeScript</Link>
 		<Link href="/frameworks">Vite with Frameworks</Link>
 		<Link href="/templates">Project Templates</Link>
-	</Section>
-	<Section title="Styling with Vite">
-		<Link href="/css">Working with CSS</Link>
-		<Link href="/css-modules">CSS Modules</Link>
-		<Link href="/postcss">PostCSS</Link>
-		<Link href="/sass">Using Sass with Vite</Link>
-		<Link href="/css-and-typescript">CSS and TypeScript</Link>
 	</Section>
 	<Section title="Assets">
 		<Link href="/static-assets">Working with Static Assets</Link>

@@ -8,6 +8,8 @@ Vite supports [PostCSS](https://postcss.org/) out of the box. There is basically
 
 Here is a list of a bunch of [PostCSS plugins](https://postcss.org/docs/postcss-plugins) that you can use.
 
+All you need to do is create a `postcss.config.cjs` file and Vite will pick it up automatically.
+
 ## Tasting Notes
 
 - Auto-detection of valid PostCSS configurations
