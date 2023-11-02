@@ -9,11 +9,43 @@ Vite includes support for importing multiple modules at the same time `import.me
 - Let's say hypothetically, I'm building a website for a course and I want to get an array of all of the Markdown files in a directory to make an index. Hypothetically, of course.
 - More practically: Let's say that I have a directory of a bunch of fixture data of API responses and I want to run the same tests over all of them.
 
+## What are we working with?
+
+Let's start small.
+
+```js
+export default function logos() {
+	const modules = console.log(import.meta.glob('./logos/**/*.svg'));
+}
+```
+
+We should see something where the keys are the file names and the values are promises that are just import statements.
+
+This means, we could do something like this:
+
+```js
+const content = document.querySelector('#content');
+
+export default function logos() {
+	const modules = import.meta.glob('./logos/**/*.svg');
+
+	for (const m of Object.values(modules)) {
+		m().then((svg) => {
+			const img = document.createElement('img');
+			img.width = 100;
+
+			img.src = svg.default;
+			content.appendChild(img);
+		});
+	}
+}
+```
+
 <div class="exercise">
 
 ## Exercise
 
-In the `vite-starter` repository, there a function that takes one of those character JSONs and renders it to a string. Can you glob import all of the JSON files that I left in there for you and use `vitest` to render them to the DOM?
+In the `vite-starter` repository, there a function that takes one of those character JSONs and renders it to a string. Can you glob import all of the JSON files that I left in there for you and use `vitest` to render them to the strings?
 
 - You can find the example setup in `src/characters/render-character.test.js`.
 

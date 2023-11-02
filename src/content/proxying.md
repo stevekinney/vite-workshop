@@ -13,14 +13,21 @@ To set up a proxy, you can modify your `vite.config.js` to include a `proxy` obj
 Here's an example:
 
 ```js
-// vite.config.js
-export default {
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+	plugins: [react()],
 	server: {
 		proxy: {
-			'/api': 'http://localhost:3001'
+			'/todos': {
+				target: 'http://localhost:3000',
+				changeOrigin: true
+			}
 		}
 	}
-};
+});
 ```
 
 In this configuration, any request that starts with `/api` on your development server will be forwarded to `http://localhost:3001`.

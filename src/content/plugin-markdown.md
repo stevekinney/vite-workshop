@@ -2,34 +2,41 @@
 title: Creating a Plugin to Render Markdown
 ---
 
-```js
-// vite-plugin-markdown-to-html.js
-const fs = require('fs');
-const path = require('path');
-const marked = require('marked');
+# Transforming Markdown
 
-module.exports = function MarkdownToHtml() {
+Consider this function to render markdown to HTML.
+
+```js
+import Markdown from 'markdown-it';
+import { readFile } from 'fs/promises';
+
+const md = new Markdown();
+
+const renderMarkdown = async (file) => {
+	const content = await readFile(id, 'utf-8');
+	const rendered = md.render(content);
+
+	return rendered;
+};
+```
+
+What would it look like to create a plugin that supported Markdown?
+
+```js
+function markdownToHtml() {
 	return {
 		name: 'markdown-to-html',
-		resolveId(source) {
-			// Resolve .md file imports
-			if (source.endsWith('.md')) {
-				return source;
-			}
-		},
-		load(id) {
-			// Load .md file content and transform it to HTML
+		resolvedId(id) {
 			if (id.endsWith('.md')) {
-				const markdownContent = fs.readFileSync(id, 'utf-8');
-				const htmlContent = marked(markdownContent);
-
-				// Export the HTML as a JavaScript string
-				return `export default ${JSON.stringify(htmlContent)};`;
+				return id;
 			}
 		},
-		transform(code, id) {
-			// Add code transformation logic here (if needed)
+		async load(id) {
+			if (id.endsWith('.md')) {
+				const rendered = await renderMarkdown(id);
+				return `export default ${JSON.stringify(rendered)}`;
+			}
 		}
 	};
-};
+}
 ```

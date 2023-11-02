@@ -39,13 +39,10 @@
 		<Link href="/library-mode">Library Mode</Link>
 		<Link href="/library-mode-components">Library Mode with Components</Link>
 		<Link href="/module-federation">Module Federation</Link>
-		<Link href="/glob-entry">Glob Entry</Link>
-		<Link href="/preserve-modules">preserveModules</Link>
 	</Section>
 	<Section title="Server Integration">
-		<Link href="/create-vite-server">createViteServer</Link>
 		<Link href="/proxying">Proxying API Requests</Link>
-		<Link href="/middleware">Middleware</Link>
+		<Link href="/create-vite-server">createViteServer</Link>
 	</Section>
 	<Section title="Plugins and Templates">
 		<Link href="/plugins">Plugins</Link>
@@ -60,5 +57,6 @@
 		<Link href="/optimize-deps">Optimize Dependencies</Link>
 		<Link href="/esbuild-options">ESBuild Options</Link>
 		<Link href="/hot-module-replacement">Hot Module Replacement</Link>
+		<Link href="/preserve-modules">preserveModules</Link>
 	</Section>
 </nav>

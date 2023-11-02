@@ -5,28 +5,27 @@ title: Plugin for Inline CSS
 # A Plugin for Inlining CSS
 
 ```ts
-import fs from 'fs';
-import path from 'path';
+function inlineCSS() {
+	return {
+		name: 'vite-inline-css',
+		apply: 'build',
+		enforce: 'post',
+		transformIndexHtml(html, context) {
+			for (const file in context.bundle) {
+				if (file.endsWith('.css')) {
+					const { fileName, source } = context.bundle[file];
 
-export default {
-	plugins: [
-		{
-			name: 'inline-css',
-			apply: 'build',
-			transformIndexHtml: {
-				enforce: 'post',
-				transform(html) {
-					const cssFilePath = path.resolve(__dirname, 'dist/assets/index.css');
-
-					const css = fs.readFileSync(cssFilePath, 'utf-8');
-
-					// Inline the CSS into the HTML's head as a style tag
-					return html.replace('</head>', `<style>${css}</style>\n</head>`);
+					html = html.replace(
+						`<link rel="stylesheet" href="/${fileName}">`,
+						`<style>${source}</style>`
+					);
 				}
 			}
+
+			return html;
 		}
-	]
-};
+	};
+}
 ```
 
 ## A Lazier Way That You Shouldn't Do
