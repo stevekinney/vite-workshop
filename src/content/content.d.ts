@@ -17,6 +17,7 @@ type ContentFile =
 	| 'glob-entry'
 	| 'glob-import-solution'
 	| 'glob-import'
+	| 'hot-module-replacement'
 	| 'image-tools'
 	| 'import-meta'
 	| 'introduction'

@@ -4,9 +4,23 @@ title: Basic Setup
 
 # Basic Setup
 
+I made a little repository that has some pre-baked goodies for us to play around with. You don't _need_ anything in this repository and I'll show you how to generate a Vite project quickly and easily, but this repository has some fun stuff like images and little code snippets that we can use as needed.
+
+So, go ahead and clone [`stevekinney/vite-starter`](https://github.com/stevekinney/vite-starter) or make a copy using `npx degit stevekinney/vite-starter vite-starter`.
+
+Oh, and don't forget to **install the dependencies**.
+
+## Starting Up the Server
+
+One of the things you'll notice about this repository and a lot of [the Vite templates](https://github.com/vitejs/vite/tree/main/packages/create-vite) is that there is an `index.html` in the root of the project.
+
+This is the entry point for Vite.
+
 We can get the application started by running either of the following: `npm start` or `npx vite`.
 
-This will start up a development server with a simple webpage.
+You'll also see that a lot of projects use `npm run dev` and this will work with our starter as well.
+
+Regardless of how you choose to run it, Vite will start up a development server with a simple webpage.
 
 ## Pulling in Some JavaScript
 
@@ -42,7 +56,7 @@ document.querySelector('h1').textContent = 'Hello World!';
 initializeCounter();
 ```
 
-This will blow up in a new and different way. You should see an error that looks something like this:
+This will blow up in _a new and different way_. You should see an error that looks something like this:
 
 > index.js:1 Uncaught SyntaxError: Cannot use import statement outside a module
 
@@ -110,35 +124,7 @@ dist
 └── …
 ```
 
-### Hot Module Replacement
-
-Out of the box, Vite supports hot module replacement. This means that if you edit a file. Only that file will be replaced and the rest of the application will continue remain. This allows Vite to refresh the page quickly and maintain the state between reloads.
-
-Most of the time, when we're using a framework, we don't have to think about it and we'll get this for free. But, if we're doing something that has side effects, we may want to clean up after ourselves.
-
-`initializeCounter()` returns a function that removes its event listeners. In the code below, we're going to:
-
-1. Dynamically load `src/counter.js`
-2. Call `initialzeCounter()` and store its `cleanup` function.
-3. If the module is replaced using hot module reloading, we'll clean up the event listeners from the old one and then reinitialize the counter.
-
-```js
-import('./counter.js').then(({ initializeCounter }) => {
-	const cleanup = initializeCounter();
-
-	if (import.meta.hot) {
-		import.meta.hot.accept(({ module }) => {
-			cleanup();
-			cleanup = module.initializeCounter();
-		});
-	}
-});
-```
-
-If this code seems like a lot, keep in mind two things:
-
-1. This will be stripped out of the final build.
-2. Most frameworks will do this for you under the hood. This might be the most that you ever have to think about it.
+**Extension**: I wrote a little piece on adding [Hot Module Replacement](./hot-module-replacement.md) to this example. But, let's be honest if you're not writing your own framework, you're probably _not_ doing this yourself.
 
 ## Exercise: Dynamic Loading
 
@@ -156,7 +142,24 @@ const render = () => {
 };
 ```
 
+Some **tasting notes**:
+
+- Try out using an regular import and a dynamic import.
+- You can place our little note into the `#content` element.
+- Don't worry about removing or dismissing the banner. (This is a workshop on a build tool, not DOM manipulation. But, like, feel free to remove it if you want, I guess.)
+- Don't worry about styling.
+
+Your code could be as simple as something like this:
+
+```js
+export const addBanner = (text) => {
+	document.querySelector('#content').textContent = text;
+};
+```
+
 <details><summary>Solution</summary>
+
+A quick and easy way to add a banner:
 
 ```js
 const render = () => {

@@ -60,5 +60,6 @@
 		<Link href="/link-and-force-optimization">Link and Force Optimization</Link>
 		<Link href="/optimize-deps">Optimize Dependencies</Link>
 		<Link href="/esbuild-options">ESBuild Options</Link>
+		<Link href="/hot-module-replacement">Hot Module Replacement</Link>
 	</Section>
 </nav>
