@@ -138,7 +138,7 @@ app.use('*', async (req, res) => {
 
 In your client entry (usually `main.js` or `main.ts`), add logic to hydrate the application:
 
-```js
+```jsx
 import React from 'react';
 import { hydrate } from 'react-dom';
 import App from './App';
