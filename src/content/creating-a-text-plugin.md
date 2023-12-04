@@ -10,18 +10,18 @@ Vite has garnered a lot of attention due to its speed and simplicity. One of the
 
 At its most basic, a Vite plugin is an object with a set of properties that correspond to different hook functions. Here is a simple template for a Vite plugin:
 
-```js
+```jsx
 export default {
 	name: 'my-vite-plugin',
-	apply: 'build', // Specify when the plugin should be run (either 'serve' for dev server, 'build' for builds, or omit to always run)
+	apply: 'build',
 	configResolved(config) {
-		// This is called once the config is resolved.
+		console.log('This is called once the config is resolved.');
 	},
 	load(id) {
-		// Override the load phase for specific modules.
+		console.log('Override the load phase for specific modules.');
 	},
 	transform(code, id) {
-		// Transform a given code snippet.
+		console.log('Transform a given code snippet.');
 	}
 };
 ```
@@ -36,7 +36,7 @@ Let's write a simple plugin that transforms all `.txt` files into JSON objects c
 
 Create a file called `my-vite-plugin.js` and set up a basic structure:
 
-```js
+```jsx
 export default function myVitePlugin() {
 	return {
 		name: 'transform-txt',
@@ -59,7 +59,7 @@ npm install path/to/your/plugin/directory
 
 Add the plugin to your `vite.config.js`:
 
-```js
+```jsx
 import myVitePlugin from 'my-vite-plugin';
 
 export default {
@@ -71,7 +71,7 @@ export default {
 
 Create a sample `.txt` file in your project and import it in a JavaScript file:
 
-```js
+```jsx
 import textContent from './sample.txt';
 console.log(textContent);
 ```

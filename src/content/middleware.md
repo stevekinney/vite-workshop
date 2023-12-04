@@ -7,11 +7,10 @@ Vite has two types of middleware modes:
 
 Here's how to specify the middleware mode in your `vite.config.js`:
 
-```js
-// vite.config.js
+```ts
 export default {
 	server: {
-		middlewareMode: 'html' // or 'proxy'
+		middlewareMode: 'html'
 	}
 };
 ```
@@ -20,8 +19,7 @@ export default {
 
 You can add your custom middleware via the `configureServer` hook in your `vite.config.js`. The `configureServer` function will be called with a `ViteDevServer` object, and you can use its `app` property, an instance of `koa`, to add middleware.
 
-```js
-// vite.config.js
+```jsx
 export default {
 	server: {
 		configureServer(app) {
@@ -41,10 +39,9 @@ In the above example, if you navigate to `http://localhost:<PORT>/hello`, you wi
 
 ### Combining with Existing Servers
 
-You can also combine Vite with existing backend servers or frameworks like Express:
+You can also combine Vite with existing backend servers or frameworks like Express in `server.js`:
 
-```js
-// server.js
+```jsx
 const express = require('express');
 const { createServer } = require('vite');
 
@@ -55,25 +52,14 @@ async function start() {
 
 	const app = express();
 
-	// Use Vite's middleware
 	app.use(vite.middlewares);
 
-	// Your custom routes here
 	app.get('/api/hello', (req, res) => res.json({ message: 'Hello' }));
 
-	// Start the server
 	app.listen(3000, () => {
 		console.log('Server running at http://localhost:3000');
 	});
 }
 
 start();
-```
-
-### Debugging Middleware
-
-For debugging, you can run Vite in debug mode to see detailed logs:
-
-```
-DEBUG=vite:* vite
 ```

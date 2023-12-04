@@ -6,14 +6,14 @@ title: Creating a Plugin to Render Markdown
 
 Consider this function to render markdown to HTML.
 
-```js
+```jsx
 import Markdown from 'markdown-it';
 import { readFile } from 'fs/promises';
 
 const md = new Markdown();
 
 const renderMarkdown = async (file) => {
-	const content = await readFile(id, 'utf-8');
+	const content = await readFile(file, 'utf-8');
 	const rendered = md.render(content);
 
 	return rendered;
@@ -22,7 +22,7 @@ const renderMarkdown = async (file) => {
 
 What would it look like to create a plugin that supported Markdown?
 
-```js
+```jsx
 function markdownToHtml() {
 	return {
 		name: 'markdown-to-html',

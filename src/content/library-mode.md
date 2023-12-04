@@ -24,7 +24,7 @@ The biggest difference that you're going to notice is that because most librarie
 
 Let's start with a super simple example.
 
-```ts
+```jsx
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
@@ -83,7 +83,7 @@ This is not-Vite-specific, but let's cover some quick terminology:
 
 We didn't specify what formats we wanted, so Vite used Rollup's defaults of `es` and `umd`. But, it will support any of the following:
 
-```ts
+```jsx
 export declare type LibraryFormats = 'es' | 'cjs' | 'umd' | 'iife';
 ```
 
@@ -101,7 +101,7 @@ npm i -D vite-plugin-dts
 
 And we'll update our `vite.config.ts` accordingly.
 
-```ts
+```jsx
 export default defineConfig({
 	plugins: [dts()],
 	build: {
@@ -128,7 +128,7 @@ You don't necessarily want to include Svelte or React or Vue with your library a
 
 We can define what _not_ to include using `rollupOptions.external`:
 
-```ts
+```jsx
 export default defineConfig({
 	plugins: [dts()],
 	build: {
@@ -153,12 +153,3 @@ We _could_ use [a plugin](https://www.npmjs.com/package/vite-plugin-lib-inject-c
 ```
 npm i -D vite-plugin-lib-inject-css
 ```
-
-## Next Steps
-
-- Show how to use `glob` to split up the CSS.
-- Add `types` entry to `package.json`.
-- Set up the `peerDependencies`.
-- Set up `sideEffects` entry in `package.json`.
-- Set up a `prepublish` step.
-- Multiple entries.

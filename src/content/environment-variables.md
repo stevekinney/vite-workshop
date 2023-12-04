@@ -17,9 +17,11 @@ VITE_API_URL=https://myapi.com
 
 In your application, you can access this variable as follows:
 
-```js
-console.log(import.meta.env.VITE_API_URL); // Outputs: "https://myapi.com"
+```jsx
+console.log(import.meta.env.VITE_API_URL);
 ```
+
+**Output**: "https://myapi.com"
 
 ### Prefixing
 
@@ -40,8 +42,7 @@ Files are loaded in that order, and variables from later files will overwrite va
 
 In the `vite.config.js` file, you can also access the environment variables via the `process.env` object, but you don't need the `VITE_` prefix there.
 
-```js
-// vite.config.js
+```jsx
 export default {
 	plugins: [
 		myPlugin({
@@ -71,7 +72,6 @@ Since environment variables are strings, you may want to declare their types if 
 ```ts
 interface ImportMetaEnv {
 	VITE_API_URL: string;
-	// define other variables here
 }
 ```
 

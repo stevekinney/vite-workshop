@@ -12,7 +12,7 @@ The [`vite-imagetools`](https://www.npmjs.com/package/vite-imagetools) plugin gi
 
 Let's go back to that _really_ big image of me. Depending on what kind of game time decisions that I made when I was live coding earlier, the code looked something like this:
 
-```js
+```jsx
 import image from './steve-after-a-workshop.jpg';
 
 const content = document.querySelector('#content');
@@ -46,7 +46,7 @@ npm rebuild --platform=darwin --arch=arm64 sharp
 
 But, now we also need to figure out how to install a plugin.
 
-```js
+```jsx
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
 
@@ -57,13 +57,13 @@ export default defineConfig({
 
 And now, we can update the `import` statement as follows.
 
-```js
+```jsx
 import image from './steve-after-a-workshop.jpg?h=400&format=webp';
 ```
 
 You can also pull in the full metadata of the image.
 
-```js
+```jsx
 import * as image from './steve-after-a-workshop.jpg?h=400&format=webp&as=metadata';
 ```
 

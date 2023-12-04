@@ -12,11 +12,10 @@ To set up a proxy, you can modify your `vite.config.js` to include a `proxy` obj
 
 Here's an example:
 
-```js
+```jsx
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
 	server: {
@@ -36,8 +35,7 @@ In this configuration, any request that starts with `/api` on your development s
 
 For more advanced use-cases, you can use an object for detailed configuration:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	server: {
 		proxy: {
@@ -61,8 +59,7 @@ In this configuration:
 
 You can also proxy WebSocket requests:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	server: {
 		proxy: {
@@ -81,8 +78,7 @@ In this example, WebSocket requests to `/socket` will be proxied to `http://loca
 
 If you have multiple different APIs or services running on different ports, you can set multiple proxy rules:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	server: {
 		proxy: {
@@ -97,14 +93,13 @@ export default {
 
 To handle secure HTTPS proxying, you can include additional options:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	server: {
 		proxy: {
 			'/api': {
 				target: 'https://secure.api.com',
-				secure: false // Disables SSL certificate verification, useful for self-signed certificates
+				secure: false
 			}
 		}
 	}

@@ -16,7 +16,7 @@ This is super important for debugging issues that only appear in production due 
 
 After you've created a production build of your project by running `vite build`, you can start the preview server by running:
 
-```bash
+```
 vite preview
 ```
 
@@ -26,12 +26,12 @@ This command will start a local HTTP server that serves the files in the `dist` 
 
 While the preview server aims to mimic a production environment, you can still specify some options to adjust its behavior. These options are typically placed in the `vite.config.js` file under the `server` field but are limited compared to the dev server. For example:
 
-```js
+```jsx
 export default {
 	server: {
 		preview: {
-			port: 5000, // specify a port
-			strictPort: true // fail if the port is occupied
+			port: 5000,
+			strictPort: true
 		}
 	}
 };

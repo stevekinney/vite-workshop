@@ -26,7 +26,7 @@ Let's start with the most boring, but straight forward of the bunch. Add the fol
 
 In `counter.js`, we can import a stylesheet.
 
-```js
+```jsx
 import './counter.css';
 ```
 
@@ -47,10 +47,8 @@ This makes sense, because because we don't have anything with that class.
 
 If we give a CSS file a `*.module.css` extension, then we can access its fingerprinted classes.
 
-```js
+```jsx
 import styles from './counter.module.css';
-
-// …
 
 countElement.classList.add(styles.count);
 ```
@@ -69,10 +67,8 @@ Can you use `banner.module.css` as a CSS module?
 
 <details><summary>Solution</summary>
 
-```js
+```jsx
 import styles from './banner.module.css';
-
-// …
 
 banner.classList.add(styles.banner);
 closeButton.classList.add(styles.button);

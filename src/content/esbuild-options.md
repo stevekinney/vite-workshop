@@ -8,13 +8,11 @@ The `esbuild` option within Vite's `optimizeDeps` configuration allows you to pa
 
 Here's a simple example:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	optimizeDeps: {
 		esbuild: {
-			// esbuild options
-			target: 'es2020' // specify the target environment
+			target: 'es2020'
 		}
 	}
 };
@@ -34,8 +32,7 @@ Here are some esbuild options that might be useful in the context of `optimizeDe
 
 Here's how you could use the `define` option for example:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	optimizeDeps: {
 		esbuild: {

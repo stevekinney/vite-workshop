@@ -19,7 +19,6 @@ import styles from './my-component.module.css';
 
 export default {
 	name: 'MyComponent'
-	// ...
 };
 </script>
 ```

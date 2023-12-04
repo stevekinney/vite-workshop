@@ -32,8 +32,7 @@ It's useful for libraries and other projects where maintaining the original file
 
 Here is a simple example of how to use `preserveModules` in a Rollup configuration:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	build: {
 		rollupOptions: {

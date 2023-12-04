@@ -16,8 +16,7 @@ Vite supports "hydration," which is the process of binding event listeners and e
 
 In Vite, you can specify separate entry points for the server and client using the `vite.config.js` file:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	build: {
 		rollupOptions: {
@@ -32,11 +31,11 @@ export default {
 
 Inside these entry points, you can use special SSR flags provided by `import.meta` to conditionally run code:
 
-```js
+```jsx
 if (import.meta.env.SSR) {
-	// Server-only code
+	console.log('Server-only code');
 } else {
-	// Client-only code
+	console.log('Client-only code');
 }
 ```
 
@@ -65,11 +64,10 @@ Implementing Server-Side Rendering (SSR) with Vite involves a few key steps, fro
 
 In your `vite.config.js`, specify SSR-specific configurations:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	ssr: {
-		// Your SSR-specific configurations here
+		/* Your SSR-specific configurations here. */
 	}
 };
 ```
@@ -78,14 +76,13 @@ export default {
 
 Create a `server.js` file (or `server.ts` if you're using TypeScript) where you'll implement the server logic. Here's an example using Express:
 
-```js
+```jsx
 const express = require('express');
 const { createServer: createViteServer } = require('vite');
 
 async function createServer() {
 	const app = express();
 
-	// Create Vite server in middleware mode.
 	const vite = await createViteServer({
 		server: { middlewareMode: 'ssr' }
 	});
@@ -93,7 +90,7 @@ async function createServer() {
 	app.use(vite.middlewares);
 
 	app.use('*', async (req, res) => {
-		// SSR logic here
+		console.log('SSR logic here…');
 	});
 
 	app.listen(3000, () => {
@@ -108,12 +105,10 @@ createServer();
 
 You'll need to render your app on the server and send the HTML to the client. Here's an example using Vue:
 
-```js
-// Inside your server.js
+```jsx
 app.use('*', async (req, res) => {
 	const url = req.originalUrl;
 
-	// Use the `ssrRender` function exported from your Vue app
 	const { ssrRender } = require('./dist/server/ssr.js');
 	let appHtml = await ssrRender(url);
 

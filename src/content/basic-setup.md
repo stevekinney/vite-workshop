@@ -28,7 +28,7 @@ At first, adding a `<script>` tag doesn't seem very exciting, but this is how Vi
 
 In `src/index.js`, let's add the following:
 
-```js
+```jsx
 console.log('Hello World!');
 
 document.querySelector('h1').textContent = 'Hello World!';
@@ -46,7 +46,7 @@ This will give us an error if we put it in the `<head>`, but we're going to igno
 
 In `src/counter.js`, we have the logic for a simple little counter. Let's pull it into `src/index.js`.
 
-```js
+```jsx
 import { initializeCounter } from './counter';
 
 console.log('Hello World!');
@@ -107,7 +107,7 @@ In the previous example, even through we've broken our code up between two modul
 
 If we used a `import()` to load our file dynamically, we'll see that it's smart enough to split up our code.
 
-```js
+```jsx
 import('./counter.js').then(({ initializeCounter }) => {
 	initializeCounter();
 });
@@ -132,12 +132,12 @@ This is a little bit contrived, but we're going to work with what we have. If th
 
 We'll probably start with something like this:
 
-```js
+```jsx
 const render = () => {
 	countElement.textContent = count;
 
 	if (count < 0) {
-		// Your code here.
+		console.log('Your code here.');
 	}
 };
 ```
@@ -151,7 +151,7 @@ Some **tasting notes**:
 
 Your code could be as simple as something like this:
 
-```js
+```jsx
 export const addBanner = (text) => {
 	document.querySelector('#content').textContent = text;
 };
@@ -161,7 +161,7 @@ export const addBanner = (text) => {
 
 A quick and easy way to add a banner:
 
-```js
+```jsx
 const render = () => {
 	countElement.textContent = count;
 

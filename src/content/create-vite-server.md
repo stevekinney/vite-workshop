@@ -16,13 +16,12 @@ npm install vite
 
 Then you can import the `createViteServer` function and use it in your Node.js script:
 
-```js
+```jsx
 import { createServer as createViteServer } from 'vite';
 
 async function start() {
 	const vite = await createViteServer({
-		// Vite options here
-		// ...
+		/* Vite options here. */
 	});
 	const url = vite.config.server.https;
 	console.log(`Vite server started at ${url}`);
@@ -35,7 +34,7 @@ start();
 
 The `createViteServer` function takes an optional configuration object that allows you to specify Vite's behavior. These options are the same as what you can provide in a `vite.config.js` file:
 
-```js
+```jsx
 const vite = await createViteServer({
 	plugins: [
 		/* your plugins */
@@ -45,7 +44,6 @@ const vite = await createViteServer({
 		port: 8080,
 		strictPort: true
 	}
-	// other Vite options
 });
 ```
 

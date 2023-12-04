@@ -10,15 +10,11 @@ Here is a list of a bunch of [PostCSS plugins](https://postcss.org/docs/postcss-
 
 All you need to do is create a `postcss.config.cjs` file and Vite will pick it up automatically.
 
-Let's take it for a spin. First, let's grab a plugin.
-
-```
-npm install -D postcss-nested
-```
+Let's take it for a spin. First, let's grab a plugin: `npm install -D postcss-nested`
 
 Then let's configure `postcss.config.cjs`.
 
-```js
+```jsx
 module.exports = {
 	plugins: {
 		['postcss-nested']: {}
@@ -34,7 +30,7 @@ So far, we haven't confiugured Vite at all—and it hasn't really complained. Bu
 
 I can add a file called `vite.config.js` (or, `vite.config.ts` and any of the various other extensions).
 
-```js
+```jsx
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -59,19 +55,17 @@ Vite supports PostCSS, a CSS preprocessor and post-processor, out of the box.
 - You can configure PostCSS and add plugins to your project by modifying the `postcss.config.js` file in your project directory.
 - This allows you to apply transformations to your CSS, such as autoprefixing, nesting, and custom property handling.
 
-```js
-// postcss.config.js
+```jsx
 module.exports = {
 	plugins: {
 		'postcss-preset-env': {}
-		// Add other PostCSS plugins here
 	}
 };
 ```
 
 Finally, let's write a style using the nested syntax.
 
-```css
+```scss
 button {
 	background-color: #4caf50;
 	color: white;

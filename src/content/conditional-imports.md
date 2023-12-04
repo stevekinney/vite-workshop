@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 module.then(function (m) {
-	// Do something with the loaded module
+	console.log('Do something with the loaded module');
 });
 ```
 
@@ -34,7 +34,7 @@ Vite exposes certain environment variables that can be used for conditional impo
 
 ```ts
 if (import.meta.env.MODE === 'development') {
-	// Import development-only module
+	console.log('Import development-only module');
 }
 ```
 
@@ -56,7 +56,7 @@ Then, you can use this in your code to conditionally import modules:
 
 ```ts
 if (__MY_CONDITION__ === 'some value') {
-	// Conditionally import something
+	console.log('Conditionally import something');
 }
 ```
 
@@ -70,7 +70,7 @@ npm install vite-plugin-dynamic-import
 
 Then, add it to your `vite.config.js`:
 
-```js
+```jsx
 import dynamicImport from 'vite-plugin-dynamic-import';
 
 export default {
@@ -80,6 +80,6 @@ export default {
 
 This plugin allows you to write conditional imports directly in the `import` statements based on conditions you define.
 
-```js
+```jsx
 import(`./content/${variable}.js`);
 ```

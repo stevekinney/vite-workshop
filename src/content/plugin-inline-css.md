@@ -4,7 +4,7 @@ title: Plugin for Inline CSS
 
 # A Plugin for Inlining CSS
 
-```js
+```jsx
 function inlineCSS() {
 	return {
 		name: 'vite-inline-css',

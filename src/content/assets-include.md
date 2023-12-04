@@ -10,8 +10,7 @@ The `assetsInclude` option in Vite's configuration allows you to specify additio
 
 You can use this option to extend the default behavior by specifying a string, a RegExp pattern, or an array of both. Here's how you could use it in your Vite configuration:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	assetsInclude: ['*.pdf', '*.ico']
 };
@@ -23,8 +22,7 @@ In this example, all `.pdf` and `.ico` files imported in your code will be treat
 
 You can also use RegExp patterns for more complex scenarios:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	assetsInclude: /^\.\/some-special-dir\/.*\.special-extension$/
 };
@@ -34,8 +32,7 @@ export default {
 
 An array can be used to include multiple patterns:
 
-```js
-// vite.config.js
+```jsx
 export default {
 	assetsInclude: ['*.pdf', /^\.\/some-special-dir\/.*\.special-extension$/]
 };
@@ -45,11 +42,11 @@ export default {
 
 Once a file type is marked as an asset, you can import it in your JavaScript like you would import, say, an image:
 
-```js
+```jsx
 import pdfPath from 'src/assets/some-document.pdf';
-
-// pdfPath will contain the resolved URL for the PDF asset
 ```
+
+`pdfPath` will contain the resolved URL for the PDF asset.
 
 ### Use Cases
 

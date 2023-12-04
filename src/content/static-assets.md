@@ -37,11 +37,11 @@ You can also import and serve static files directly from your source code. This 
 
 For instance, you can import an image in a JavaScript file:
 
-```js
+```jsx
 import myImage from 'src/images/my-image.jpg';
-
-// myImage now contains the resolved URL of the image.
 ```
+
+> `myImage` now contains the resolved URL of the image.
 
 Vite's development server utilizes the browser's native caching features to cache static assets. This ensures that unchanged files are not reloaded, leading to faster development experiences.
 
@@ -63,7 +63,7 @@ We have this image in `public/images/steve-after-a-workshop.jpg`. You can try lo
 
 Okay, here you go.
 
-```js
+```jsx
 import image from './steve-after-a-workshop.jpg';
 
 const content = document.querySelector('#content');
@@ -103,7 +103,7 @@ Here are some quick hits that you _probably_ don't need, but I'm including at th
 
 Although the default directory for static files is `public`, you can configure this using the `publicDir` option in `vite.config.js`:
 
-```js
+```jsx
 export default defineConfig({
 	publicDir: 'my-public-folder'
 });

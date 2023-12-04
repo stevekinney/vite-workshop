@@ -14,7 +14,7 @@ We need to give Vite an entry point for our library. I just want to export the c
 
 It's going to look something like this:
 
-```js
+```jsx
 export * from './button';
 export * from './input';
 ```
@@ -23,7 +23,7 @@ export * from './input';
 
 Let's start with something simple, like this:
 
-```js
+```jsx
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
@@ -59,7 +59,7 @@ So, let's call that out as an external dependency.
 
 Rollup has an option for us. I'm going to tell it not to include all of the React stuff. If you use a different framework, this obviously be a little different, but the basic idea still applies.
 
-```js
+```jsx
 export default defineConfig({
 	plugins: [react()],
 	build: {
@@ -100,8 +100,9 @@ Vite does not generate TypeScript types by default. You will have to include a T
 
 My first thought would be to try to use TypeScript's build-in compiler.
 
-```
-// package.json
+In `package.json`
+
+```json
 {
 	"scripts": {
 		"build": "vite build && npm run build:types",
@@ -129,7 +130,6 @@ const __dirname = new URL('.', import.meta.url).pathname;
 
 export default defineConfig({
 	plugins: [react(), dts()]
-	// … more stuff
 });
 ```
 
@@ -191,14 +191,14 @@ npm install -D vite-plugin-lib-inject-css
 export default defineConfig({
 	plugins: [
 		react(),
-		libInjectCss(), // 👀
+		libInjectCss() /* 👀 */,
 		dts({
 			include: ['src/components']
 		})
 	],
 	build: {
 		copyPublicDir: false,
-		cssCodeSplit: true, // 👀
+		cssCodeSplit: true /* 👀 */,
 		lib: {
 			entry: resolve(__dirname, 'src/components/index.ts'),
 			name: 'VeryFancyComponents',

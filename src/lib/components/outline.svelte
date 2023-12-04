@@ -54,7 +54,6 @@
 		<Link href="/css-and-typescript">CSS and TypeScript</Link>
 		<Link href="/dependency-prebundling">Dependency Pre-Bundling</Link>
 		<Link href="/link-and-force-optimization">Link and Force Optimization</Link>
-		<Link href="/optimize-deps">Optimize Dependencies</Link>
 		<Link href="/esbuild-options">ESBuild Options</Link>
 		<Link href="/hot-module-replacement">Hot Module Replacement</Link>
 		<Link href="/preserve-modules">preserveModules</Link>

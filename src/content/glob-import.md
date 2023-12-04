@@ -13,7 +13,7 @@ Vite includes support for importing multiple modules at the same time `import.me
 
 Let's start small.
 
-```js
+```jsx
 export default function logos() {
 	const modules = console.log(import.meta.glob('./logos/**/*.svg'));
 }
@@ -23,7 +23,7 @@ We should see something where the keys are the file names and the values are pro
 
 This means, we could do something like this:
 
-```js
+```jsx
 const content = document.querySelector('#content');
 
 export default function logos() {

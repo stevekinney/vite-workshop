@@ -22,7 +22,7 @@ npm install @originjs/vite-plugin-federation --save-dev
 
 Now, add it to your Vite config. Create or modify `vite.config.js` as follows:
 
-```js
+```jsx
 import { defineConfig } from 'vite';
 import ModuleFederation from 'vite-plugin-module-federation';
 
@@ -45,12 +45,11 @@ Now that we've exposed some modules, let's see how to consume them in another Vi
 
 Next, update its `vite.config.js` to consume the federated module:
 
-```js
+```jsx
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import federation from '@originjs/vite-plugin-federation';
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
 		react(),

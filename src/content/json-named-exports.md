@@ -15,22 +15,27 @@ In many bundlers, importing a JSON file generally brings in the whole object. In
 }
 ```
 
-```js
-// main.js
+In `main.js`:
+
+```jsx
 import data from './data.json';
 
-console.log(data.name); // Output: Alice
+console.log(data.name);
 ```
+
+**Output**: Alice
 
 ## Named Exports
 
 Vite also allows named exports directly from JSON files. This feature enables you to import only the fields you need:
 
-```js
+```jsx
 import { name, age } from './data.json';
 
-console.log(name); // Output: Alice
+console.log(name);
 ```
+
+**Output**: Alice
 
 This is different from how Node.js or Webpack handle JSON imports, where you typically have to import the whole object and then destructure it.
 
@@ -55,6 +60,8 @@ declare module '*.json' {
 
 ```ts
 import('./data.json').then(function ({ name }) {
-	console.log(name); // Output: Alice
+	console.log(name);
 });
 ```
+
+**Output**: Alice

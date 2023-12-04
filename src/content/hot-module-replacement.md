@@ -14,7 +14,7 @@ Most of the time, when we're using a framework, we don't have to think about it 
 2. Call `initialzeCounter()` and store its `cleanup` function.
 3. If the module is replaced using hot module reloading, we'll clean up the event listeners from the old one and then reinitialize the counter.
 
-```js
+```jsx
 import('./counter.js').then(({ initializeCounter }) => {
 	const cleanup = initializeCounter();
 
