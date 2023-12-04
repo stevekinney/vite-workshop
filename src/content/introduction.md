@@ -4,7 +4,8 @@ title: Introduction
 
 # Course Introduction
 
-These are my notes from the [Vite workshop](https://frontendmasters.com/workshops/vite) for [Frontend Masters](https://frontendmasters.com).
+These are my notes from the [Vite Course for Frontend Masters
+](https://frontendmasters.com/courses/vite/).
 
 If you see a typographical error, you can open up a pull request against [this repository](https://github.com/stevekinney/vite-workshop).
 
